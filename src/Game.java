@@ -36,6 +36,7 @@ public class Game {
             System.out.println();
             if (player.gold < 0) break;
         }
+        System.out.println("___GAME OVER___");
 
     }
 
