@@ -7,7 +7,7 @@ public class Game {
 
     {
         Player player = new Player();
-        player.sum(2, 2);
+        player.expForNextLvlUp =5;
         player.respect = 5;
         player.gold = 10;
         player.lvl = 1;
@@ -31,6 +31,7 @@ public class Game {
                 player.respect = player.respect + karavan.lvl;
             }
             player.gold -= 3;
+            player.lvlup();
             player.printInfo();
             if (player.respect < 0) break;
             System.out.println();

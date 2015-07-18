@@ -1,12 +1,13 @@
 public class Player {
     int lvl;
     int exp;
+    int expForNextLvlUp;
     String name;
     public int gold;
     public int respect;
     public void printInfo() {
         System.out.println(name);
-        System.out.println(exp+" exp");
+        System.out.println(exp+" exp "+lvl+" уровень");
         System.out.println("Ваше богатсво " + gold + " уважение " + respect);
     }
 
@@ -15,11 +16,11 @@ public class Player {
         this.respect = this.respect - karavan.lvl;
         exp=this.exp+karavan.lvl;
     }
-
-    public void sum(int a, int b) {
-        int sum=a+b;
-        System.out.println("summa ravna "+sum);
-
+    public void lvlup(){
+    if (exp>=expForNextLvlUp) {
+        lvl=lvl+1;
+        expForNextLvlUp=expForNextLvlUp*2;
+    }
     }
 }
 
