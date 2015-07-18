@@ -1,11 +1,13 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class Game {
     public static void main(String[] args) throws IOException
 
     {
+        ArrayList<Karavan> karavansList= new ArrayList<>();
         Player player = new Player();
         player.expForNextLvlUp =5;
         player.respect = 5;
@@ -30,6 +32,7 @@ public class Game {
             } else {
                 player.respect = player.respect + karavan.lvl;
             }
+            karavansList.add(karavan);
             player.gold -= 3;
             player.lvlup();
             player.printInfo();
@@ -38,6 +41,10 @@ public class Game {
             if (player.gold < 0) break;
         }
         System.out.println("___GAME OVER___");
+        System.out.println("SPisok karavanov");
+        for (Karavan karavan:karavansList){
+            karavan.printInfo();
+        }
 
     }
 
