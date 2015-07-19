@@ -9,18 +9,7 @@ public class Game {
     public static void main(String[] args) throws IOException
 
     {
-        ArrayList<Karavan> karavansList = new ArrayList<>();
-        Player player = new Player();    //TODO добавить в игрока коллекцию с солдатами, сделать класс Soldat с силой, именем и стоимостью найма в день
-        player.expForNextLvlUp = 5;
-        player.respect = 5;
-        player.gold = 10;
-        player.lvl = 1;
-        player.exp = 0;
-        System.out.println("Вас зовут?");
-        String newName = getInputString();
-        player.name = newName;
-        player.printInfo();
-        while (true) {
+       /* while (true) {
             Karavan karavan = new Karavan();
             karavan.lvl = (int) (Math.random() * 5 + 1);
             karavan.goldKaravan();
@@ -45,7 +34,7 @@ public class Game {
         System.out.println("SPisok karavanov");
         for (Karavan karavan : karavansList) {
             karavan.printInfo();     //TODO выводить резуьтат боя
-        }
+        }*/
 
     }
 
@@ -54,4 +43,5 @@ public class Game {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         return br.readLine();
     }
+
 }

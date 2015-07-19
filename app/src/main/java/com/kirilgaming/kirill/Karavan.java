@@ -1,11 +1,19 @@
 package com.kirilgaming.kirill;
 
+import com.kirilgaming.kirill.activities.MainActivity;
+
 public class Karavan {
-    int lvl;
+    public int lvl;
     int gold;
+    private MainActivity activity;
+
+    public Karavan(MainActivity activity) {
+
+        this.activity = activity;
+    }
 
     public void printInfo() {
-        System.out.println("уровень коравана " + lvl + " золото коравана " + gold);
+        activity.println("уровень коравана " + lvl + " золото коравана " + gold);
     }
 
     public void goldKaravan() {
