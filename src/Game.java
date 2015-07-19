@@ -7,9 +7,9 @@ public class Game {
     public static void main(String[] args) throws IOException
 
     {
-        ArrayList<Karavan> karavansList= new ArrayList<>();
-        Player player = new Player();
-        player.expForNextLvlUp =5;
+        ArrayList<Karavan> karavansList = new ArrayList<>();
+        Player player = new Player();    //TODO добавить в игрока коллекцию с солдатами, сделать класс Soldat с силой, именем и стоимостью найма в день
+        player.expForNextLvlUp = 5;
         player.respect = 5;
         player.gold = 10;
         player.lvl = 1;
@@ -25,10 +25,9 @@ public class Game {
             karavan.printInfo();
             System.out.println(" хотите его ограбить?");
             String userInput = getInputString();
-            if (userInput.toUpperCase().equals("Y")) {
-
+            if (userInput.toUpperCase().equals("Y")) { //TODO добавить несколько действий на манер "1) атаковать 2) не атаковать 3) пойти в магазин и т.д."
                 player.rob(karavan);
-
+                //TODO добвить логику о вероятностной победе над корованом и записывать результат сражения в объект корована
             } else {
                 player.respect = player.respect + karavan.lvl;
             }
@@ -42,8 +41,8 @@ public class Game {
         }
         System.out.println("___GAME OVER___");
         System.out.println("SPisok karavanov");
-        for (Karavan karavan:karavansList){
-            karavan.printInfo();
+        for (Karavan karavan : karavansList) {
+            karavan.printInfo();     //TODO выводить резуьтат боя
         }
 
     }
