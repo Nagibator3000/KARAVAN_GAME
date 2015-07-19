@@ -23,9 +23,16 @@ public class Player {
     }
 
     public void rob(Karavan karavan) {
-        this.gold = this.gold + karavan.gold;
-        this.respect = this.respect - karavan.lvl;
-        exp = this.exp + karavan.lvl;
+        if (Math.random() < 0.75) {
+            this.gold = this.gold + karavan.gold;
+            this.respect = this.respect - karavan.lvl;
+            exp = this.exp + karavan.lvl;
+            karavan.robFailed=false;
+        } else {
+            respect = respect - karavan.lvl * 2;
+            activity.println("Не удалось ограбить корован ");
+            karavan.robFailed=true;
+        }
     }
 
     public void lvlup() {

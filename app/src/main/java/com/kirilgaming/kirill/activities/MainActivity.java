@@ -67,7 +67,6 @@ public class MainActivity extends ActionBarActivity {
         player.gold = 10;
         player.lvl = 1;
         player.exp = 0;
-        println("Вас зовут?");
         player.name = "Kirill";
         player.printInfo();
 

@@ -6,6 +6,7 @@ public class Karavan {
     public int lvl;
     int gold;
     private MainActivity activity;
+    public boolean robFailed;
 
     public Karavan(MainActivity activity) {
 
@@ -13,7 +14,11 @@ public class Karavan {
     }
 
     public void printInfo() {
-        activity.println("уровень коравана " + lvl + " золото коравана " + gold);
+        if (robFailed) {
+            activity.println("уровень коравана " + lvl + " золото коравана " + gold +" НЕ УДАЛОСЬ ОГРАБИТЬ");
+        } else {
+            activity.println("уровень коравана " + lvl + " золото коравана " + gold);
+        }
     }
 
     public void goldKaravan() {
